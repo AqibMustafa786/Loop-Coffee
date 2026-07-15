@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Coffee | Specialty Coffee Shop & Roastery</title>
+    <meta name="description" content="Welcome to Loop Coffee, where specialty coffee meets luxurious design. Explore our in-house roasted beans, custom coffee builder, delicious bites, and book a table.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    
+    <!-- Custom Cursor (Luxury Visual Detail) -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Top Glow Overlay -->
+    <div class="ambient-glow"></div>
+
+    <!-- Header & Navigation -->
+    <header class="main-header" id="header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <span class="logo-circle"></span>
+                <span class="logo-text">LOOP<span>COFFEE</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#menu" class="nav-link">Our Menu</a></li>
+                    <li><a href="#customizer" class="nav-link">Custom Brew</a></li>
+                    <li><a href="#gallery" class="nav-link">Ambience</a></li>
+                    <li><a href="#contact" class="nav-link">Find Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-trigger" id="cart-trigger" aria-label="Open Shopping Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+                <a href="#contact" class="btn-nav btn-primary-outline">Book a Table</a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h5 class="hero-subtitle animated-text">Established 2026 • Specialty Roastery</h5>
+            <h1 class="hero-title animated-text">Where every brew<br>comes <span>full circle</span>.</h1>
+            <p class="hero-description animated-text">Sourcing, roasting, and crafting the highest-grade specialty coffee in the city. Experience custom-tailored blends in a space designed for connection.</p>
+            <div class="hero-buttons animated-text">
+                <a href="#menu" class="btn btn-primary">Order Now</a>
+                <a href="#customizer" class="btn btn-secondary">Design Your Brew</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down" aria-label="Scroll to About Section">
+            <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+            <span class="scroll-text">Scroll Down</span>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding" id="about">
+        <div class="container grid-2">
+            <div class="about-images">
+                <div class="image-wrapper main-img">
+                    <img src="assets/about_coffee.png" alt="Specialty Coffee Roasting" loading="lazy">
+                </div>
+                <div class="image-wrapper offset-img">
+                    <img src="assets/ambience_barista.png" alt="Barista Pouring Latte Art" loading="lazy">
+                </div>
+                <div class="experience-badge">
+                    <span class="exp-number">100%</span>
+                    <span class="exp-text">Arabica<br>Beans</span>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <span class="section-tag">Our Philosophy</span>
+                <h2 class="section-title">Cultivating the highest grade coffee available.</h2>
+                <p class="section-desc">With Loop Coffee, we bring the vibrant Melbourne specialty coffee culture straight to your cup. We focus intensely on ethical sourcing, profile roasting, and meticulous extraction. For us, coffee is not just a drink—it’s an art form, a science, and a community ritual.</p>
+                
+                <div class="philosophy-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div>
+                            <h4>Ethical Sourcing</h4>
+                            <p>Direct-trade agreements that support and sustain independent global farmers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div>
+                            <h4>Freshly Roasted</h4>
+                            <p>Small-batch micro-roasts processed on-site weekly for unparalleled peak flavor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Customizer Section -->
+    <section class="customizer-section section-padding" id="customizer">
+        <div class="container">
+            <div class="section-header center-align">
+                <span class="section-tag">Interactive Workshop</span>
+                <h2 class="section-title">Design Your Perfect Loop</h2>
+                <p class="section-desc max-w-600">Why settle for standard? Interact with our real-time coffee visualizer to craft a drink tailored to your exact taste profile.</p>
+            </div>
+            
+            <div class="grid-2 customizer-container">
+                <!-- Visualizer Cup Area -->
+                <div class="customizer-preview-panel">
+                    <div class="coffee-cup-container">
+                        <div class="steam-wrapper">
+                            <span class="steam-line line-1"></span>
+                            <span class="steam-line line-2"></span>
+                            <span class="steam-line line-3"></span>
+                        </div>
+                        
+                        <div class="coffee-cup">
+                            <div class="cup-glass-rim"></div>
+                            <div class="cup-liquid-container">
+                                <!-- Liquid layers colored & sized dynamically via JS -->
+                                <div class="liquid-layer layer-topping" id="cup-topping"></div>
+                                <div class="liquid-layer layer-foam" id="cup-foam"></div>
+                                <div class="liquid-layer layer-milk" id="cup-milk"></div>
+                                <div class="liquid-layer layer-coffee" id="cup-coffee"></div>
+                            </div>
+                            <div class="cup-handle"></div>
+                        </div>
+                        <div class="cup-saucer"></div>
+                    </div>
+                    
+                    <div class="coffee-stats">
+                        <div class="stat-card">
+                            <span class="stat-label">Caffeine</span>
+                            <span class="stat-val" id="stat-caffeine">150mg</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Calories</span>
+                            <span class="stat-val" id="stat-calories">80 kcal</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Temp</span>
+                            <span class="stat-val" id="stat-temp">Hot (65°C)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controls Area -->
+                <div class="customizer-controls-panel">
+                    <div class="control-group">
+                        <h4 class="control-title">1. Choose Size</h4>
+                        <div class="radio-buttons-grid">
+                            <label class="control-radio">
+                                <input type="radio" name="size" value="small" checked>
+                                <span class="radio-card">
+                                    <span class="size-indicator size-s"></span>
+                                    <span class="radio-label">Small <span class="price-add">+ $0.00</span></span>
+                                </span>
+                            </label>
+                            
+                            <label class="control-radio">
+                                <input type="radio" name="size" value="medium">
+                                <span class="radio-card">
+                                    <span class="size-indicator size-m"></span>
+                                    <span class="radio-label">Medium <span class="price-add">+ $0.80</span></span>
+                                </span>
+                            </label>
+                            
+                            <label class="control-radio">
+                                <input type="radio" name="size" value="large">
+                                <span class="radio-card">
+                                    <span class="size-indicator size-l"></span>
+                                    <span class="radio-label">Large <span class="price-add">+ $1.50</span></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h4 class="control-title">2. Select Milk Base</h4>
+                        <div class="radio-buttons-grid">
+                            <label class="control-radio">
+                                <input type="radio" name="milk" value="none" checked>
+                                <span class="radio-card">
+                                    <span class="radio-label">No Milk <span class="price-add">+ $0.00</span></span>
+                                </span>
+                            </label>
+                            
+                            <label class="control-radio">
+                                <input type="radio" name="milk" value="whole">
+                                <span class="radio-card">
+                                    <span class="radio-label">Whole Milk <span class="price-add">+ $0.50</span></span>
+                                </span>
+                            </label>
+
+                            <label class="control-radio">
+                                <input type="radio" name="milk" value="oat">
+                                <span class="radio-card">
+                                    <span class="radio-label">Oat Milk <span class="price-add">+ $0.75</span></span>
+                                </span>
+                            </label>
+                            
+                            <label class="control-radio">
+                                <input type="radio" name="milk" value="almond">
+                                <span class="radio-card">
+                                    <span class="radio-label">Almond Milk <span class="price-add">+ $0.75</span></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="slider-header">
+                            <label for="espresso-shots" class="control-title">3. Espresso Strength</label>
+                            <span class="slider-value" id="shots-val">2 Shots</span>
+                        </div>
+                        <input type="range" class="custom-slider" id="espresso-shots" min="1" max="4" value="2" step="1" title="Espresso Strength">
+                        <div class="slider-ticks">
+                            <span>Single</span>
+                            <span>Double</span>
+                            <span>Triple</span>
+                            <span>Quad</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="slider-header">
+                            <label for="sweetness" class="control-title">4. Sweetness Level</label>
+                            <span class="slider-value" id="sweet-val">50%</span>
+                        </div>
+                        <input type="range" class="custom-slider" id="sweetness" min="0" max="100" value="50" step="25" title="Sweetness Level">
+                        <div class="slider-ticks">
+                            <span>Unsweet</span>
+                            <span>Semi-sweet</span>
+                            <span>Sweet</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h4 class="control-title">5. Add Toppings</h4>
+                        <div class="checkbox-grid">
+                            <label class="control-checkbox">
+                                <input type="checkbox" name="topping" value="caramel" data-price="0.60">
+                                <span class="checkbox-card">
+                                    <span class="checkbox-label">Caramel Drizzle <span class="price-add">+ $0.60</span></span>
+                                </span>
+                            </label>
+                            
+                            <label class="control-checkbox">
+                                <input type="checkbox" name="topping" value="chocolate" data-price="0.50">
+                                <span class="checkbox-card">
+                                    <span class="checkbox-label">Cocoa Powder <span class="price-add">+ $0.50</span></span>
+                                </span>
+                            </label>
+                            
+                            <label class="control-checkbox">
+                                <input type="checkbox" name="topping" value="cinnamon" data-price="0.40">
+                                <span class="checkbox-card">
+                                    <span class="checkbox-label">Ground Cinnamon <span class="price-add">+ $0.40</span></span>
+                                </span>
+                            </label>
+                            
+                            <label class="control-checkbox">
+                                <input type="checkbox" name="topping" value="whipped" data-price="0.80">
+                                <span class="checkbox-card">
+                                    <span class="checkbox-label">Whipped Cream <span class="price-add">+ $0.80</span></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="customizer-footer">
+                        <div class="customizer-price-box">
+                            <span class="price-label">Custom Brew Price</span>
+                            <span class="price-value" id="custom-brew-price">$4.50</span>
+                        </div>
+                        <button class="btn btn-primary btn-full" id="add-custom-btn">Add custom brew to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section section-padding" id="menu">
+        <div class="container">
+            <div class="section-header center-align">
+                <span class="section-tag">Menu & Offerings</span>
+                <h2 class="section-title">The Loop Gastronomy</h2>
+                <p class="section-desc max-w-600">Curated specialty beverages paired with premium kitchen creations cooked with premium, fresh ingredients.</p>
+            </div>
+
+            <!-- Menu Search & Tabs -->
+            <div class="menu-controls">
+                <div class="search-bar-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="menu-search" placeholder="Search menu items..." aria-label="Search Menu Items">
+                </div>
+                
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-tab="all">All Items</button>
+                    <button class="tab-btn" data-tab="signature">Signature Drinks</button>
+                    <button class="tab-btn" data-tab="coffee">Coffee</button>
+                    <button class="tab-btn" data-tab="bites">Bites</button>
+                    <button class="tab-btn" data-tab="desserts">Desserts</button>
+                </div>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Dynamically Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambience Section -->
+    <section class="gallery-section section-padding" id="gallery">
+        <div class="container">
+            <div class="section-header center-align">
+                <span class="section-tag">Loop Vibe</span>
+                <h2 class="section-title">Our Ambience</h2>
+                <p class="section-desc max-w-600">A visual peek into our luxury space where sleek concrete meets rich walnut wood and warm, glowing brass lights.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item large" data-index="0">
+                    <img src="assets/hero_bg.png" alt="Loop Cafe Lounge Area" loading="lazy">
+                    <div class="gallery-overlay-text">
+                        <h4>Lounge Corner</h4>
+                        <p>Comfort and conversation</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="1">
+                    <img src="assets/ambience_barista.png" alt="Barista Crafting Latte" loading="lazy">
+                    <div class="gallery-overlay-text">
+                        <h4>Artisanal Pouring</h4>
+                        <p>Latte art precision</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="2">
+                    <img src="assets/about_coffee.png" alt="Coffee Bean Roastery" loading="lazy">
+                    <div class="gallery-overlay-text">
+                        <h4>Micro Roastery</h4>
+                        <p>Ethical roasting</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="3">
+                    <img src="assets/sig_dirty.png" alt="Dirty Coffee Preparation" loading="lazy">
+                    <div class="gallery-overlay-text">
+                        <h4>Signature Serve</h4>
+                        <p>Layered Dirty Coffee</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="4">
+                    <img src="assets/sig_macchiato.png" alt="Macchiato serving" loading="lazy">
+                    <div class="gallery-overlay-text">
+                        <h4>Perfect Pour</h4>
+                        <p>Caramel Macchiato</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item large" data-index="5">
+                    <img src="assets/bites_lamb.png" alt="Modern Culinary Offering" loading="lazy">
+                    <div class="gallery-overlay-text">
+                        <h4>Culinary Bites</h4>
+                        <p>Braised Lamb Ribs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider Section -->
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <div class="testimonials-wrapper">
+                <div class="testimonials-slider" id="testimonials-slider">
+                    <div class="slide active">
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">"Loop Coffee has completely elevated the specialty coffee standard. The customizer tool on their site works flawlessly, and picking up my custom-ordered vanilla oat cortado is the highlight of my morning. Absolute masterpiece of design and taste!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Alexander Wright</div>
+                            <div class="author-role">Design Director, Arc Agency</div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">"The Dirty Coffee is incredible—highly chilled milk contrasting with rich hot espresso. And the dark interior design matches the luxurious coffee cups perfectly. It's a sanctuary for true coffee lovers."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Sarah Jenkins</div>
+                            <div class="author-role">Food Blogger & Gastronomist</div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide">
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">"Everything, from the caramelized lamb ribs to the pumpkin cream cheese cookies, feels elevated. Loop Coffee isn't just a coffee shop; it's a premium lifestyle experience."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Marcus Sterling</div>
+                            <div class="author-role">Regular Patron</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-dots" id="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation & Contact Section -->
+    <section class="contact-section section-padding" id="contact">
+        <div class="container grid-2">
+            <!-- Reservation Form -->
+            <div class="reservation-card">
+                <span class="section-tag">Bookings</span>
+                <h3 class="card-title">Reserve a Table</h3>
+                <p class="card-desc">Avoid the wait by securing your spot in advance. Please fill in your reservation details.</p>
+                
+                <form id="reservation-form" class="styled-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-name">Name</label>
+                            <input type="text" id="res-name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="res-email">Email</label>
+                            <input type="email" id="res-email" required placeholder="yourname@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-date">Date</label>
+                            <input type="date" id="res-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-time">Time</label>
+                            <select id="res-time" required>
+                                <option value="" disabled selected>Select time slot</option>
+                                <option value="08:00">08:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="14:00">02:00 PM</option>
+                                <option value="16:00">04:00 PM</option>
+                                <option value="18:00">06:00 PM</option>
+                                <option value="20:00">08:00 PM</option>
+                                <option value="22:00">10:00 PM</option>
+                                <option value="00:00">12:00 AM (Midnight)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-guests">Number of Guests</label>
+                            <select id="res-guests" required>
+                                <option value="1">1 Person</option>
+                                <option value="2" selected>2 People</option>
+                                <option value="4">4 People</option>
+                                <option value="6">6 People</option>
+                                <option value="8">8+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-seating">Area Preference</label>
+                            <select id="res-seating" required>
+                                <option value="lounge">Luxury Lounge (Walnut Wood)</option>
+                                <option value="counter">Bar Counter (Interactive Barista)</option>
+                                <option value="dining">Indoor Dining Room</option>
+                                <option value="patio">Outdoor Garden Patio</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full margin-top-md">Confirm Reservation</button>
+                </form>
+            </div>
+            
+            <!-- Contact Details / Info -->
+            <div class="contact-details-column">
+                <div class="contact-details">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">Where to find us</h2>
+                    <p class="section-desc">Located in the heart of the city's premium design district, DHA Karachi, featuring valet parking and premium acoustic design.</p>
+                    
+                    <div class="info-blocks">
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="info-text">
+                                <h5>Address</h5>
+                                <p>Shop #A-2, Ground Floor, plot number 21-C, lane 13, Bukhari Commercial, DHA Ph. VI, Karachi.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            </div>
+                            <div class="info-text">
+                                <h5>Contacts & Bookings</h5>
+                                <p>Email: booking@loopcoffee.com <br>Phone: +92 (21) 3524-1188</p>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div class="info-text">
+                                <h5>Operating Hours</h5>
+                                <p>Monday – Sunday: 07:30 AM – 01:30 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stylized Mock Map (CSS Art) -->
+                <div class="stylized-map">
+                    <div class="map-grid-overlay"></div>
+                    <div class="map-road-1"></div>
+                    <div class="map-road-2"></div>
+                    <div class="map-pin">
+                        <span class="pin-ripple"></span>
+                        <span class="pin-point"></span>
+                    </div>
+                    <div class="map-label">Loop Coffee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-circle"></span>
+                    <span class="logo-text">LOOP<span>COFFEE</span></span>
+                </a>
+                <p class="footer-desc">Crafting premium specialty coffee and building a community around slow-roasted, meticulous brewing.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Follow us on Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="Follow us on Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Follow us on X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h5>Explore</h5>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Philosophy</a></li>
+                    <li><a href="#menu">Our Menu</a></li>
+                    <li><a href="#customizer">Custom Brew</a></li>
+                    <li><a href="#gallery">Cafe Vibe</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h5>Join the Loop</h5>
+                <p>Subscribe to receive exclusive coffee drops, micro-batch roasting alerts, and private event bookings.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required aria-label="Email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container flex-space">
+                <p>&copy; 2026 Loop Coffee. All Rights Reserved. Inspired by Melbrew Coffee.</p>
+                <p>Designed by Aqib Mustafa Surahio | <a href="admin.html" style="color: var(--color-primary); margin-left: 10px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;" class="admin-portal-link"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Admin Portal</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="cart-close" id="cart-close" aria-label="Close Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        
+        <div class="cart-items-container" id="cart-items">
+            <!-- Dynamically populated via JS -->
+            <div class="empty-cart-message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                <p>Your order is empty.</p>
+                <a href="#menu" class="btn btn-secondary btn-sm" id="cart-empty-shop-btn">View Menu</a>
+            </div>
+        </div>
+        
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>GST (Tax 13%)</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Amount</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkout-btn">Place Order</button>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous Image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="Full Screen Lightbox View" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-nav next" id="lightbox-next" aria-label="Next Image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+    </div>
+
+    <!-- General Feedback Notification (Toast) -->
+    <div class="toast-notification" id="toast-notification">
+        <span class="toast-message" id="toast-message">Item added to cart!</span>
+    </div>
+
+    <!-- Dynamic Modal: Reservation Success -->
+    <div class="modal-dialog-overlay" id="success-modal">
+        <div class="modal-dialog">
+            <div class="modal-success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e6ccb2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 id="success-modal-title">Table Confirmed</h3>
+            <p id="success-modal-desc">Thank you! Your booking is successfully registered. A confirmation code has been sent to your email.</p>
+            <button class="btn btn-secondary" id="success-modal-close">Close Window</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="app.js?v=1.1"></script>
+</body>
+</html>

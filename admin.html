@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Coffee | Admin Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=1.1">
+</head>
+<body class="admin-body">
+
+    <!-- Security PIN Gate -->
+    <div class="pin-gate-overlay" id="pin-gate">
+        <div class="pin-gate-box">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <div class="logo-text">LOOP<span>COFFEE</span></div>
+            </div>
+            <h3>Admin Portal Gate</h3>
+            <p>Enter the 4-digit security PIN to access the manager dashboard.</p>
+            <div class="pin-input-group">
+                <input type="password" id="pin-field" maxlength="4" placeholder="••••" autocomplete="off" autofocus>
+                <div class="pin-error-msg" id="pin-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="main-header scrolled">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-circle"></div>
+                <div class="logo-text">LOOP<span>COFFEE</span></div>
+            </a>
+            <div class="header-actions">
+                <button id="logout-btn" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log Out
+                </button>
+                <a href="index.html" class="btn btn-primary btn-sm">Main Site</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Admin Container -->
+    <main class="admin-container">
+        
+        <!-- Header -->
+        <div class="admin-header">
+            <div>
+                <span class="section-tag">Loop Operations</span>
+                <h1>Admin <span>Dashboard</span></h1>
+            </div>
+            <div style="font-size: 13px; color: var(--color-text-muted);" id="current-time-display"></div>
+        </div>
+
+        <!-- Statistics Grid -->
+        <div class="admin-stats-grid">
+            <div class="stat-card">
+                <span class="stat-title">Total Orders</span>
+                <span class="stat-value" id="stat-total-orders">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Total Revenue</span>
+                <span class="stat-value" id="stat-total-revenue">$0.00</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Table Bookings</span>
+                <span class="stat-value" id="stat-total-reservations">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Subscribers</span>
+                <span class="stat-value" id="stat-total-subscribers">0</span>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="admin-tabs-nav">
+            <button class="admin-tab-btn active" data-tab="orders">Orders</button>
+            <button class="admin-tab-btn" data-tab="reservations">Reservations</button>
+            <button class="admin-tab-btn" data-tab="subscribers">Subscribers</button>
+        </div>
+
+        <!-- Tab Panel: Orders -->
+        <div class="admin-tab-panel active" id="panel-orders">
+            <div class="controls-bar">
+                <div class="search-box-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="search-orders" placeholder="Search orders by ID...">
+                </div>
+                <div style="font-size: 12px; color: var(--color-text-muted); font-weight: 500;">
+                    Live updates active
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date & Time</th>
+                            <th>Items & Configuration</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: var(--color-text-muted); padding: 30px 0;">Loading orders...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab Panel: Reservations -->
+        <div class="admin-tab-panel" id="panel-reservations">
+            <div class="controls-bar">
+                <div class="search-box-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="search-reservations" placeholder="Search reservations by name...">
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Guest Name</th>
+                            <th>Email Address</th>
+                            <th>Date & Time</th>
+                            <th>Guests</th>
+                            <th>Seating Area</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservations-tbody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: var(--color-text-muted); padding: 30px 0;">Loading bookings...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab Panel: Subscribers -->
+        <div class="admin-tab-panel" id="panel-subscribers">
+            <div class="controls-bar">
+                <div class="search-box-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="search-subscribers" placeholder="Search subscribers...">
+                </div>
+                <button id="export-subs-btn" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV
+                </button>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Email Address</th>
+                            <th>Subscription Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscribers-tbody">
+                        <tr>
+                            <td colspan="2" style="text-align: center; color: var(--color-text-muted); padding: 30px 0;">Loading subscribers...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Firebase SDK Modules & App Logic -->
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
