@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Web3Forms Access Key for Email Notifications (Get a free key at web3forms.com)
-const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_ACCESS_KEY = "e012facc-e57e-42e8-b330-becd6c918c0b";
 
 document.addEventListener('DOMContentLoaded', () => {
 
