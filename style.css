@@ -2620,3 +2620,36 @@ img {
         font-size: 12px;
     }
 }
+
+/* Helper Utility and Integration Styles */
+.btn-icon-align {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.admin-time-display {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.admin-live-updates {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.admin-table td.table-msg-row {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: 30px 0;
+}
+
+.admin-portal-link {
+    color: var(--color-primary);
+    margin-left: 10px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
