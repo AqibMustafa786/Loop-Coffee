@@ -647,6 +647,35 @@
                     <span id="cart-total">$0.00</span>
                 </div>
             </div>
+            
+            <!-- Payment Method Selection -->
+            <div class="payment-method-section">
+                <h5 class="payment-section-title">Payment Method</h5>
+                <div class="payment-options">
+                    <label class="payment-option-label">
+                        <input type="radio" name="payment-method" value="cod" checked>
+                        <span>Cash on Delivery</span>
+                    </label>
+                    <label class="payment-option-label">
+                        <input type="radio" name="payment-method" value="easypaisa">
+                        <span>EasyPaisa</span>
+                    </label>
+                </div>
+                
+                <!-- EasyPaisa Transfer Instructions -->
+                <div class="easypaisa-instructions" id="easypaisa-instructions">
+                    <p class="easypaisa-instructions-label">Please send the exact total amount to:</p>
+                    <div class="merchant-account-details">
+                        <div><strong>Mobile No:</strong> 03173276706</div>
+                        <div><strong>Account Name:</strong> Aqib Mustaffa</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="easypaisa-tid">Transaction ID (TID)</label>
+                        <input type="text" id="easypaisa-tid" class="easypaisa-tid-input" placeholder="Enter 11-digit Transaction ID" maxlength="11">
+                    </div>
+                </div>
+            </div>
+
             <button class="btn btn-primary btn-full" id="checkout-btn">Place Order</button>
         </div>
     </div>
