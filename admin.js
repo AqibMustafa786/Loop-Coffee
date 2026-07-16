@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tbody.innerHTML = '';
 
         if (ordersList.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--color-text-muted); padding: 30px 0;">No orders found.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="7" class="table-msg-row">No orders found.</td></tr>`;
             return;
         }
 
@@ -238,6 +238,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             itemsHtml += '</ul>';
 
+            // Build Payment Info cell
+            let paymentHtml = '';
+            const payMethod = order.paymentMethod || 'cod';
+            const payStatus = order.paymentStatus || 'cod';
+            
+            if (payMethod === 'easypaisa') {
+                const badgeClass = payStatus === 'completed' ? 'completed' : 'pending';
+                const badgeLabel = payStatus === 'completed' ? 'Paid' : 'Unverified';
+                paymentHtml = `
+                    <div style="font-size: 13px;">
+                        <span style="font-weight: 600; color: #ea4c89;">EasyPaisa</span>
+                        <span class="status-badge ${badgeClass}" style="display: inline-block; padding: 2px 6px; font-size: 9px; margin-left: 5px;">${badgeLabel}</span>
+                        <div style="font-size: 11px; color: var(--color-text-muted); margin-top: 4px; font-family: monospace;">TID: ${order.transactionId || 'N/A'}</div>
+                    </div>
+                `;
+            } else {
+                paymentHtml = `
+                    <div style="font-size: 13px; color: var(--color-text-muted);">
+                        <span>Cash on Delivery</span>
+                    </div>
+                `;
+            }
+
             // Status Badge
             const status = order.status || 'pending';
             const statusBadge = `<span class="status-badge ${status}">${status}</span>`;
@@ -245,16 +268,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // Action Buttons based on Status
             let actionsHtml = '';
             if (status === 'pending') {
+                const showVerifyBtn = payMethod === 'easypaisa' && payStatus === 'pending_verification';
                 actionsHtml = `
                     <div class="actions-cell">
-                        <button class="btn-action complete" data-id="${order.docId}">Complete</button>
-                        <button class="btn-action delete" data-id="${order.docId}">Cancel</button>
+                        ${showVerifyBtn ? `<button class="btn-action verify-payment-btn" data-id="${order.docId}" style="border-color: rgba(234, 76, 137, 0.3); color: #ea4c89;">Verify Payment</button>` : ''}
+                        <button class="btn-action complete-order-btn" data-id="${order.docId}">Complete</button>
+                        <button class="btn-action delete-order-btn" data-id="${order.docId}">Cancel</button>
                     </div>
                 `;
             } else {
                 actionsHtml = `
                     <div class="actions-cell">
-                        <button class="btn-action delete" data-id="${order.docId}">Delete Record</button>
+                        <button class="btn-action delete-order-btn" data-id="${order.docId}">Delete Record</button>
                     </div>
                 `;
             }
@@ -264,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${dateStr}</td>
                 <td>${itemsHtml}</td>
                 <td style="font-weight: 700; color: var(--color-text-light);">$${(order.total || 0).toFixed(2)}</td>
+                <td>${paymentHtml}</td>
                 <td>${statusBadge}</td>
                 <td>${actionsHtml}</td>
             `;
@@ -337,8 +363,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. ACTION INTERACTORS
     // ==========================================
     function addOrderActionListeners() {
-        const completeBtns = document.querySelectorAll('.btn-action.complete');
-        const deleteBtns = document.querySelectorAll('.btn-action.delete');
+        const completeBtns = document.querySelectorAll('.complete-order-btn');
+        const deleteBtns = document.querySelectorAll('.delete-order-btn');
+        const verifyPaymentBtns = document.querySelectorAll('.verify-payment-btn');
+
+        verifyPaymentBtns.forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                const docId = btn.getAttribute('data-id');
+                btn.textContent = 'Verifying...';
+                btn.disabled = true;
+
+                try {
+                    await updateDoc(doc(db, "orders", docId), { paymentStatus: 'completed' });
+                } catch (err) {
+                    console.error("Error verifying payment: ", err);
+                    alert("Error verifying payment status.");
+                    btn.textContent = 'Verify Payment';
+                    btn.disabled = false;
+                }
+            });
+        });
 
         completeBtns.forEach(btn => {
             btn.addEventListener('click', async (e) => {
@@ -351,6 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 } catch (err) {
                     console.error("Error completing order: ", err);
                     alert("Error updating order status.");
+                    btn.textContent = 'Complete';
+                    btn.disabled = false;
                 }
             });
         });
@@ -369,6 +415,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             await updateDoc(doc(db, "orders", docId), { status: 'cancelled' });
                         } catch (err) {
                             console.error("Error cancelling order: ", err);
+                            btn.textContent = actionText;
+                            btn.disabled = false;
                         }
                     }
                 } else {
@@ -380,6 +428,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             await deleteDoc(doc(db, "orders", docId));
                         } catch (err) {
                             console.error("Error deleting order document: ", err);
+                            btn.textContent = actionText;
+                            btn.disabled = false;
                         }
                     }
                 }

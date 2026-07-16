@@ -2653,3 +2653,95 @@ img {
     align-items: center;
     gap: 4px;
 }
+
+/* Payment Integration Styles */
+.payment-method-section {
+    margin-top: 16px;
+    margin-bottom: 20px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+}
+
+.payment-section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.payment-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.payment-option-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg-input);
+    padding: 10px 12px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    font-size: 13px;
+    transition: var(--transition-fast);
+}
+
+.payment-option-label:hover {
+    border-color: var(--color-primary);
+}
+
+.payment-option-label input {
+    accent-color: var(--color-primary);
+}
+
+.easypaisa-instructions {
+    display: none;
+    background: rgba(221, 184, 146, 0.03);
+    border: 1px solid rgba(221, 184, 146, 0.15);
+    padding: 12px;
+    border-radius: var(--border-radius-md);
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.easypaisa-instructions.active {
+    display: block;
+}
+
+.easypaisa-instructions-label {
+    margin-bottom: 8px;
+    color: var(--color-text-light);
+}
+
+.merchant-account-details {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 12px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.easypaisa-tid-input {
+    height: 38px;
+    background-color: var(--color-bg-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 0 12px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--color-text-light);
+    outline: none;
+    width: 100%;
+    transition: var(--transition-fast);
+}
+
+.easypaisa-tid-input:focus {
+    border-color: var(--color-primary);
+}

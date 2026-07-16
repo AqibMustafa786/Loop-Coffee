@@ -710,10 +710,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Toggle EasyPaisa details section in cart drawer
+    const paymentMethodRadios = document.querySelectorAll('input[name="payment-method"]');
+    const easypaisaInstructions = document.getElementById('easypaisa-instructions');
+    const easypaisaTidField = document.getElementById('easypaisa-tid');
+
+    if (paymentMethodRadios.length > 0 && easypaisaInstructions && easypaisaTidField) {
+        paymentMethodRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'easypaisa') {
+                    easypaisaInstructions.classList.add('active');
+                } else {
+                    easypaisaInstructions.classList.remove('active');
+                    easypaisaTidField.value = ''; // clear input
+                }
+            });
+        });
+    }
+
     // Checkout Form Submission Simulation
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             const originalBtnText = checkoutBtn.textContent;
+            
+            // Get selected payment method
+            const selectedPaymentRadio = document.querySelector('input[name="payment-method"]:checked');
+            const selectedPaymentMethod = selectedPaymentRadio ? selectedPaymentRadio.value : 'cod';
+            let transactionId = '';
+            let paymentStatus = 'cod';
+
+            if (selectedPaymentMethod === 'easypaisa') {
+                if (!easypaisaTidField) return;
+                transactionId = easypaisaTidField.value.trim();
+
+                if (!transactionId) {
+                    showToast("Please enter your EasyPaisa Transaction ID (TID) to place the order.");
+                    return;
+                }
+
+                // EasyPaisa TID validation: exactly 11 digits
+                const tidRegex = /^\d{11}$/;
+                if (!tidRegex.test(transactionId)) {
+                    showToast("Invalid Transaction ID. EasyPaisa TID must be exactly 11 digits.");
+                    return;
+                }
+                paymentStatus = 'pending_verification';
+            }
+
             checkoutBtn.textContent = 'Processing Order...';
             checkoutBtn.disabled = true;
 
@@ -742,7 +785,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 tax: gstVal,
                 total: totalVal,
                 timestamp: serverTimestamp(),
-                status: 'pending'
+                status: 'pending',
+                paymentMethod: selectedPaymentMethod,
+                transactionId: transactionId,
+                paymentStatus: paymentStatus
             })
             .then(docRef => {
                 console.log("Order saved to database with ID: ", docRef.id);
@@ -773,7 +819,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             Items: orderItemsText,
                             Subtotal: `$${subtotalVal.toFixed(2)}`,
                             Tax: `$${gstVal.toFixed(2)}`,
-                            Total_Amount: `$${totalVal.toFixed(2)}`
+                            Total_Amount: `$${totalVal.toFixed(2)}`,
+                            Payment_Method: selectedPaymentMethod === 'easypaisa' ? 'EasyPaisa Online' : 'Cash on Delivery',
+                            Transaction_ID: transactionId || 'N/A'
                         })
                     })
                     .then(res => res.json())
@@ -787,6 +835,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     .catch(err => {
                         console.error("Error sending order email:", err);
                     });
+                }
+
+                // Reset payment methods
+                const defaultRadio = document.querySelector('input[name="payment-method"][value="cod"]');
+                if (defaultRadio) {
+                    defaultRadio.checked = true;
+                    // Trigger change event to hide details
+                    defaultRadio.dispatchEvent(new Event('change'));
                 }
 
                 successModalTitle.textContent = "Order Placed Successfully!";
