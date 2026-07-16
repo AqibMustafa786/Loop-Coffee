@@ -8,23 +8,23 @@
 /* CSS Reset & Variable Tokens */
 :root {
     /* Color Palette */
-    --color-bg-deep: #0a0908;       /* Deep Charcoal Black */
-    --color-bg-card: #141210;       /* Rich Dark Card Background */
-    --color-bg-input: #1a1715;      /* Darker Input Field Background */
-    --color-border: rgba(230, 204, 178, 0.08); /* Skin Muted Border */
-    --color-border-hover: rgba(221, 184, 146, 0.25);
+    --color-bg-deep: #050505;       /* Pure Deep Black */
+    --color-bg-card: #0f0f0f;       /* Dark charcoal Card Background */
+    --color-bg-input: #151515;      /* Darker Input Field Background */
+    --color-border: rgba(255, 59, 48, 0.08); /* Muted Red Border */
+    --color-border-hover: rgba(255, 59, 48, 0.25);
     
-    --color-text-light: #f4ebe1;     /* Pure Skin/Cream Text */
-    --color-text-muted: #cbbba9;     /* Soft Lattee/Cream Text */
-    --color-text-dark: #2c2520;      /* Dark Brown for high-contrast dark text */
+    --color-text-light: #ffffff;     /* Pure White Text */
+    --color-text-muted: #a0a0a0;     /* Clean Gray Text */
+    --color-text-dark: #121212;      /* Pure Dark for high-contrast dark text */
     
-    --color-primary: #ddb892;        /* Warm Gold/Skin Accent */
-    --color-primary-hover: #ede0d4;  /* Glowing Cream Highlight */
-    --color-secondary: #b08968;      /* Deep Bronze/Warm Tan Accent */
-    --color-accent-glow: rgba(221, 184, 146, 0.15);
+    --color-primary: #ff3b30;        /* Glowing Red/Orange Neon Accent */
+    --color-primary-hover: #ff453a;  /* Brighter Neon Red */
+    --color-secondary: #ff9f0a;      /* Neon Orange Accent */
+    --color-accent-glow: rgba(255, 59, 48, 0.15);
     
     /* Font Families */
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Inter', sans-serif; /* Clean Sans-Serif to match the modern Loop aesthetic */
     --font-body: 'Inter', sans-serif;
     
     /* Layout Sizes */
@@ -301,37 +301,28 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     z-index: 101;
+    text-decoration: none;
 }
-.logo-circle {
-    width: 22px;
-    height: 22px;
-    border: 3px solid var(--color-primary);
-    border-radius: 50%;
-    position: relative;
+.logo-icon-svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--color-primary);
+    fill: none;
+    transition: var(--transition-fast);
 }
-.logo-circle::after {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 3px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--color-secondary);
+.logo:hover .logo-icon-svg {
+    stroke: var(--color-primary-hover);
+    filter: drop-shadow(0 0 4px var(--color-primary));
 }
 .logo-text {
     font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 0.18em;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.12em;
     color: var(--color-text-light);
-}
-.logo-text span {
-    font-weight: 300;
-    color: var(--color-primary);
-    margin-left: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 /* Nav Menu */

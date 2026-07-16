@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const revenue = allOrders
             .filter(o => o.status === 'completed')
             .reduce((sum, o) => sum + (o.total || 0), 0);
-        document.getElementById('stat-total-revenue').textContent = `$${revenue.toFixed(2)}`;
+        document.getElementById('stat-total-revenue').textContent = `Rs. ${Math.round(revenue)}`;
 
         // 3. Table Bookings
         document.getElementById('stat-total-reservations').textContent = allReservations.length;
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 order.items.forEach(item => {
                     itemsHtml += `
                         <li>
-                            ${item.title} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}
+                            ${item.title} (x${item.quantity}) - Rs. ${item.price * item.quantity}
                             ${item.meta ? `<span>Config: ${item.meta}</span>` : ''}
                         </li>
                     `;
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td style="font-family: monospace; font-weight: 600; color: var(--color-primary);">${order.orderId || 'N/A'}</td>
                 <td>${dateStr}</td>
                 <td>${itemsHtml}</td>
-                <td style="font-weight: 700; color: var(--color-text-light);">$${(order.total || 0).toFixed(2)}</td>
+                <td style="font-weight: 700; color: var(--color-text-light);">Rs. ${Math.round(order.total || 0)}</td>
                 <td>${paymentHtml}</td>
                 <td>${statusBadge}</td>
                 <td>${actionsHtml}</td>

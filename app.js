@@ -128,144 +128,139 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. MENU SYSTEM DATA & CONTROLS
     // ==========================================
     const menuItems = [
-        // 1. Signature Drinks
-        {
-            id: 'sig-caramel-macchiato',
-            title: 'Caramel Macchiato',
-            price: 6.50,
-            description: 'Rich caramel mixed with our signature double espresso and steamed milk with a velvet finish.',
-            category: 'signature',
-            image: 'assets/sig_macchiato.png',
-            badge: 'Best Seller'
-        },
-        {
-            id: 'sig-spanish-latte',
-            title: 'Spanish Latte',
-            price: 6.00,
-            description: 'Our signature double shot of espresso mixed with condensed milk, stirred and served with steamed silky milk.',
-            category: 'signature',
-            image: 'assets/about_coffee.png',
-            badge: 'Popular'
-        },
-        {
-            id: 'sig-dirty-coffee',
-            title: 'Dirty Coffee',
-            price: 5.50,
-            description: 'A bottom layer of ice cold whole milk topped with a floating hot signature double espresso shot.',
-            category: 'signature',
-            image: 'assets/sig_dirty.png',
-            badge: 'Barista Choice'
-        },
-        {
-            id: 'sig-frappe',
-            title: 'Strawberry Cheesecake Frappe',
-            price: 7.00,
-            description: 'A luxurious in-house blend of fresh strawberries, cream cheese, white chocolate, and whipped cream. Caffeine-free.',
-            category: 'signature',
-            image: 'assets/dessert_tart.png',
-            badge: 'Kid Friendly'
-        },
-
-        // 2. Coffee
+        // 1. Coffees
         {
             id: 'coffee-espresso',
-            title: 'Double Espresso',
-            price: 3.50,
-            description: 'Double shot of our freshly roasted house blend, displaying tasting notes of rich cocoa and hazelnut.',
-            category: 'coffee',
-            image: 'assets/ambience_barista.png'
-        },
-        {
-            id: 'coffee-flat-white',
-            title: 'Flat White',
-            price: 4.50,
-            description: 'Velvety microfoam poured over a double shot of espresso. Perfect balance of milk texture and robust flavor.',
+            title: 'Espresso',
+            price: 300,
+            description: 'Freshly pulled double shot of our premium signature house blend.',
             category: 'coffee',
             image: 'assets/ambience_barista.png'
         },
         {
             id: 'coffee-latte',
-            title: 'Cafe Latte',
-            price: 4.70,
-            description: 'Steamed milk poured over a single shot of espresso, finished with a thin layer of delicate froth.',
+            title: 'Latte',
+            price: 350,
+            description: 'Silky steamed milk poured over a rich double shot of espresso.',
             category: 'coffee',
             image: 'assets/ambience_barista.png'
         },
         {
-            id: 'coffee-cortado',
-            title: 'Cortado',
-            price: 4.00,
-            description: 'Equal parts double espresso and warm steamed milk to reduce acidity while retaining strength.',
+            id: 'coffee-cappuccino',
+            title: 'Cappuccino',
+            price: 350,
+            description: 'Classic espresso drink with equal parts espresso, steamed milk, and rich milk foam.',
             category: 'coffee',
             image: 'assets/ambience_barista.png'
         },
         {
-            id: 'coffee-cold-brew',
-            title: '18hr Cold Brew',
-            price: 5.00,
-            description: 'Single-origin beans steeped in cold water for 18 hours. Exceptionally smooth, sweet, and low acidity.',
+            id: 'coffee-loop-latte',
+            title: 'Loop Latte',
+            price: 380,
+            description: 'Our signature cold latte with a secret cream blend. A local favorite!',
+            category: 'coffee',
+            image: 'assets/about_coffee.png',
+            badge: 'Signature'
+        },
+        {
+            id: 'coffee-very-vanilla',
+            title: 'Very Vanilla',
+            price: 380,
+            description: 'Smooth espresso blended with sweet French vanilla syrup and velvet milk.',
+            category: 'coffee',
+            image: 'assets/ambience_barista.png'
+        },
+        {
+            id: 'coffee-caramel-macchiato',
+            title: 'Caramel Macchiato',
+            price: 380,
+            description: 'Fresh espresso with steamed milk, sweetened with vanilla and drizzled with caramel.',
+            category: 'coffee',
+            image: 'assets/sig_macchiato.png',
+            badge: 'Best Seller'
+        },
+        {
+            id: 'coffee-hazelnut-heaven',
+            title: 'Hazelnut Heaven',
+            price: 380,
+            description: 'Rich roasted hazelnut syrup combined with our signature double espresso.',
+            category: 'coffee',
+            image: 'assets/ambience_barista.png'
+        },
+        {
+            id: 'coffee-coconut-creme',
+            title: 'Coconut Crème',
+            price: 380,
+            description: 'Tropical coconut infusion mixed with smooth, creamy steamed milk and espresso.',
+            category: 'coffee',
+            image: 'assets/ambience_barista.png'
+        },
+        {
+            id: 'coffee-caramel-popcorn',
+            title: 'Caramel Popcorn',
+            price: 380,
+            description: 'A sweet, buttery caramel popcorn latte with a rich espresso kick.',
+            category: 'coffee',
+            image: 'assets/ambience_barista.png'
+        },
+        {
+            id: 'coffee-mad-mocha',
+            title: 'Mad Mocha',
+            price: 420,
+            description: 'Decadent dark chocolate melted into double espresso and warm textured milk.',
             category: 'coffee',
             image: 'assets/sig_dirty.png'
         },
 
-        // 3. Bites
+        // 2. Americano Refreshers
         {
-            id: 'bites-lamb-ribs',
-            title: 'Charred Lamb Ribs',
-            price: 20.00,
-            description: 'Za\'atar rubbed ribs, glazed with Turkish molasses BBQ sauce, served with roasted sesame yogurt.',
-            category: 'bites',
-            image: 'assets/bites_lamb.png',
-            badge: 'Chef Special'
+            id: 'refresher-classic',
+            title: 'Classic Americano',
+            price: 200,
+            description: 'Double shot of espresso diluted with hot water or poured over ice.',
+            category: 'refreshers',
+            image: 'assets/sig_dirty.png'
         },
         {
-            id: 'bites-chicken-fried',
-            title: 'Coconut Fried Chicken',
-            price: 19.00,
-            description: 'Crispy coconut milk marinated chicken strips served with a spicy maple dip and house-made coleslaw.',
-            category: 'bites',
-            image: 'assets/bites_lamb.png'
+            id: 'refresher-peach-pulse',
+            title: 'Peach Pulse',
+            price: 380,
+            description: 'A sparkling, sweet peach-infused refresher with an espresso base.',
+            category: 'refreshers',
+            image: 'assets/sig_dirty.png'
         },
         {
-            id: 'bites-pasta',
-            title: 'Chicken, Tomato & Garlic Pasta',
-            price: 15.00,
-            description: 'Artisanal spaghetti tossed in extra virgin olive oil, pan-seared chicken, heirloom tomatoes, and fresh basil.',
-            category: 'bites',
-            image: 'assets/bites_lamb.png'
+            id: 'refresher-crisp-apple',
+            title: 'Crisp Apple',
+            price: 380,
+            description: 'Zesty and crisp green apple refresher blended with chilled espresso.',
+            category: 'refreshers',
+            image: 'assets/sig_dirty.png'
         },
         {
-            id: 'bites-ribeye',
-            title: 'Prime Rib Eye Steak',
-            price: 25.00,
-            description: 'Pan-seared ribeye basted with rosemary garlic butter, served with a red wine reduction glaze.',
-            category: 'bites',
-            image: 'assets/hero_bg.png'
+            id: 'refresher-lemon-zest',
+            title: 'Lemon Zest',
+            price: 380,
+            description: 'Tangy lemon syrup and soda topped with a float of cold-brewed espresso.',
+            category: 'refreshers',
+            image: 'assets/sig_dirty.png'
+        },
+        {
+            id: 'refresher-sunset-fusion',
+            title: 'Sunset Fusion',
+            price: 380,
+            description: 'A colorful layered fruit tea refresher topped with chilled espresso.',
+            category: 'refreshers',
+            image: 'assets/sig_dirty.png'
         },
 
-        // 4. Desserts
+        // 3. Matcha
         {
-            id: 'dessert-berry-tart',
-            title: 'Summer Berry Tart',
-            price: 9.00,
-            description: 'Crisp graham cracker base filled with silky custard, topped with organic raspberries and blueberries.',
-            category: 'desserts',
-            image: 'assets/dessert_tart.png'
-        },
-        {
-            id: 'dessert-cupcake',
-            title: 'Double Chocolate Cupcakes',
-            price: 7.50,
-            description: 'Rich dark cocoa cupcake topped with premium chocolate fudge frosting and imported sprinkles.',
-            category: 'desserts',
-            image: 'assets/dessert_tart.png'
-        },
-        {
-            id: 'dessert-cookies',
-            title: 'Pumpkin Spice Cookies',
-            price: 8.00,
-            description: 'Soft pumpkin-flavored cookies filled with smooth, sweetened cream cheese frosting centers.',
-            category: 'desserts',
+            id: 'matcha-iced',
+            title: 'Iced Matcha',
+            price: 400,
+            description: 'Premium stone-ground Japanese matcha whisked with ice-cold milk.',
+            category: 'matcha',
             image: 'assets/dessert_tart.png'
         }
     ];
@@ -310,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div>
                         <div class="menu-card-header">
                             <h4 class="menu-card-title">${item.title}</h4>
-                            <span class="menu-card-price">$${item.price.toFixed(2)}</span>
+                            <span class="menu-card-price">Rs. ${item.price}</span>
                         </div>
                         <p class="menu-card-desc">${item.description}</p>
                     </div>
@@ -403,20 +398,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 2. Calculations
-        // Base Espresso price is $3.50
-        let price = 3.50;
+        // Base Espresso price is Rs. 350
+        let price = 350;
 
         // Add size cost
-        if (size === 'medium') price += 0.80;
-        if (size === 'large') price += 1.50;
+        if (size === 'medium') price += 50;
+        if (size === 'large') price += 100;
 
         // Add milk cost
-        if (milk === 'whole') price += 0.50;
-        if (milk === 'oat' || milk === 'almond') price += 0.75;
+        if (milk === 'whole') price += 40;
+        if (milk === 'oat' || milk === 'almond') price += 80;
 
-        // Add shot cost (first 2 shots included, extra shots $0.75 each)
+        // Add shot cost (first 2 shots included, extra shots Rs. 50 each)
         if (shots > 2) {
-            price += (shots - 2) * 0.75;
+            price += (shots - 2) * 50;
         }
 
         // Add toppings
@@ -449,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Update Labels
         shotsValLabel.textContent = shots === 1 ? '1 Shot' : `${shots} Shots`;
         sweetValLabel.textContent = sweetness === 0 ? 'Unsweet' : sweetness === 50 ? 'Semi-sweet' : sweetness === 100 ? 'Sweet' : `${sweetness}%`;
-        customPriceLabel.textContent = `$${price.toFixed(2)}`;
+        customPriceLabel.textContent = `Rs. ${price}`;
         caffeineLabel.textContent = `${caffeineVal}mg`;
         caloriesLabel.textContent = `${caloriesVal} kcal`;
         tempLabel.textContent = tempText;
@@ -523,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const size = document.querySelector('input[name="size"]:checked').value;
             const milk = document.querySelector('input[name="milk"]:checked').value;
             const shots = shotSlider.value;
-            const price = parseFloat(customPriceLabel.textContent.replace('$', ''));
+            const price = parseFloat(customPriceLabel.textContent.replace('Rs. ', ''));
             
             const title = `Custom Loop (${size.charAt(0).toUpperCase() + size.slice(1)})`;
             const meta = `${shots} Shot(s), ${milk !== 'none' ? milk + ' milk' : 'no milk'}`;
@@ -670,7 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="cart-item-info">
                     <h4 class="cart-item-title">${item.title}</h4>
                     ${item.meta ? `<p class="cart-item-meta">${item.meta}</p>` : ''}
-                    <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                    <div class="cart-item-price">Rs. ${item.price}</div>
                 </div>
                 <div class="cart-item-controls">
                     <div class="quantity-selector">
@@ -688,9 +683,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const gstVal = subtotalVal * 0.13;
         const totalVal = subtotalVal + gstVal;
 
-        cartSubtotal.textContent = `$${subtotalVal.toFixed(2)}`;
-        cartTax.textContent = `$${gstVal.toFixed(2)}`;
-        cartTotal.textContent = `$${totalVal.toFixed(2)}`;
+        cartSubtotal.textContent = `Rs. ${Math.round(subtotalVal)}`;
+        cartTax.textContent = `Rs. ${Math.round(gstVal)}`;
+        cartTotal.textContent = `Rs. ${Math.round(totalVal)}`;
 
         // Attach quantity buttons listeners
         document.querySelectorAll('.qty-minus').forEach(btn => {
@@ -800,7 +795,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 2. Send email notification via Web3Forms (if access key is configured)
                 if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY") {
                     const orderItemsText = cart.map(item => {
-                        let text = `${item.title} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`;
+                        let text = `${item.title} (x${item.quantity}) - Rs. ${item.price * item.quantity}`;
                         if (item.meta) text += ` [Config: ${item.meta}]`;
                         return text;
                     }).join('\n');
@@ -817,9 +812,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             from_name: "Loop Coffee Website",
                             Order_ID: orderNum,
                             Items: orderItemsText,
-                            Subtotal: `$${subtotalVal.toFixed(2)}`,
-                            Tax: `$${gstVal.toFixed(2)}`,
-                            Total_Amount: `$${totalVal.toFixed(2)}`,
+                            Subtotal: `Rs. ${Math.round(subtotalVal)}`,
+                            Tax: `Rs. ${Math.round(gstVal)}`,
+                            Total_Amount: `Rs. ${Math.round(totalVal)}`,
                             Payment_Method: selectedPaymentMethod === 'easypaisa' ? 'EasyPaisa Online' : 'Cash on Delivery',
                             Transaction_ID: transactionId || 'N/A'
                         })
